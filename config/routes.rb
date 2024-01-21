@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       post 'edit', action: :update
     end
   end
-  
-  resources :users, only: [:show, :edit, :update]
+
+  resources :users, only: [:show, :index, :edit, :update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
