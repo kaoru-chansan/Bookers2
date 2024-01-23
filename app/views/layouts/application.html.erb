@@ -15,11 +15,7 @@
       <header>
     <% if user_signed_in? %>
       <li>
-        <%= link_to 'Home',user_path(current_user.id) %>
-      </li>
-
-      <li>
-        <%= link_to '投稿フォーム', new_book_path %>
+        <%= link_to 'Home', user_path(current_user.id) %>
       </li>
 
       <li>
@@ -36,8 +32,17 @@
     <% else %>
 
       <li>
+        <%= link_to "Home", root_path %>
+      </li>
+
+      <li>
+        <%= link_to "About", about_path %>
+      </li>
+
+      <li>
         <%= link_to "Sign up", new_user_registration_path %>
       </li>
+
       <li>
         <%= link_to "Log in", new_user_session_path %>
       </li>
@@ -45,7 +50,14 @@
   </header>
 
 
+  <main>
+  <!--  <%# flash.each do |message_type, message| %>-->
+  <!--    <div class="flash-message <%#= message_type %>"><%#= message %></div>-->
+  <!--  <%# end %>-->
+    <%= flash[:notice] %>
 
     <%= yield %>
+
+  </main>
   </body>
 </html>
