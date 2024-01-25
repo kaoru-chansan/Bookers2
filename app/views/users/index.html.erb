@@ -1,8 +1,8 @@
-<%= render partial: 'from', collection: @books, as: :book, locals: { user: @user, current_user: current_user } %>
+<%= render partial: 'from', locals: { user: current_user, book: @new_book } %>
 
 <h2>Users</h2>
 
-<% @user.each do |user| %>
+<% @users.each do |user| %>
   <div>
     <p>image：<%= image_tag user.get_profile_image(100,100) %></p>
     <p>name：<%= user.name %></p>

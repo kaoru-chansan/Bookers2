@@ -1,4 +1,4 @@
-<%= render partial: 'users/from', collection: @books, as: :book, locals: { user: @user, current_user: current_user } %>
+<%= render partial: 'users/from', locals: { user: current_user, book: @book } %>
 
 <h2>Books</h2>
 
