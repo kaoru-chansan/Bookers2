@@ -18,9 +18,26 @@
           <span>Bookers</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
-        
-        
-    <% if user_signed_in? %>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse show" id="navbarNavDropdown" style>
+          <ul class="navbar-nav ml-auto">
+            <% if user_signed_in? %>
+            <li>
+              <a class="nav-link text-light" href="/">
+                <i class="fa-solid fa-house"></i>
+                "Home"
+              </a>
+            </li>
+              <a class="nav-link text-light" href="/">
+                <i class="fa-solid fa-link"></i>
+                "About"
+            <li>
+              
+            </li>
+
+          </ul>
       <li>
         <%= link_to 'Home', user_path(current_user.id) %>
       </li>
