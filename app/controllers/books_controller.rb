@@ -17,6 +17,7 @@ class BooksController < ApplicationController
   end
 
   def index
+    flash[:notice] = "Welcome! You have signed up successfully."
     @books = Book.all
     @book = Book.new
   end
