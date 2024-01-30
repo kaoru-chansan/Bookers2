@@ -92,14 +92,17 @@
 
 
   <main>
+    <p id="notice"><%= flash[:notice] %></p>
   <!--  <%# flash.each do |message_type, message| %>-->
   <!--    <div class="flash-message <%#= message_type %>"><%#= message %></div>-->
   <!--  <%# end %>-->
-    <%= flash[:notice] %>
+
 
     <%= yield %>
 
 
   </main>
+
+
   </body>
 </html>
