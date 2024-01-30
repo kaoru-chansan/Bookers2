@@ -17,14 +17,14 @@ class BooksController < ApplicationController
   end
 
   def index
-    flash[:notice] = "Welcome! You have signed up successfully."
+    
     @books = Book.all
     @book = Book.new
   end
 
   def show
     @book = Book.find(params[:id])
-    @user = Book.user
+    @user = @book.user
     @new_book = Book.new
   end
 

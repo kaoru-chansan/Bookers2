@@ -1,16 +1,38 @@
-<%= render 'users/from', locals: { user: @user, book: @new_book } %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+    <%= render 'users/from', {user: @user, book: @new_book } %>
+    </div>
 
-<h2>Book detail</h2>
+    <div class="col-md-8 offset-md-1">
+      <h2>Book detail</h2>
 
-<div>
-  <p>Title：<%= @book.title %></p>
-  <p>Opinion：<%= @book.body %></p>
-  <p>投稿ユーザー画像：<%= image_tag @book.user.get_profile_image(100,100) %></p>
-  <p>ユーザーネーム：<%= @book.user.name %></p>
-  <% if @book.user == current_user %>
-    <%= link_to "edit", edit_book_path(@book), method: :get %>
-  <% end %>
-  <% if @book.user == current_user %>
-    <%= link_to "destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？" %>
-  <% end %>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>
+               <%= image_tag @book.user.get_profile_image(100,100) %><br>
+               <%= @book.user.name %>
+            </td>
+            <td>
+              <%= @book.title %>
+            </td>
+            <td>
+              <%= @book.body %>
+            </td>
+            <td>
+              <% if @book.user == current_user %>
+                <%= link_to "Edit", edit_book_path(@book), class: "btn btn-sm btn-success" %>
+              <% end %>
+            </td>
+            <td>
+              <% if @book.user == current_user %>
+                <%= link_to "destroy", book_path(@book), class: "btn btn-sm btn-danger", method: :delete, "data-confirm" => "本当に消しますか？" %>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

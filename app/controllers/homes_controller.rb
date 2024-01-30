@@ -3,7 +3,6 @@ class HomesController < ApplicationController
   end
 
   def about
-    flash.now[:notice] = "Signed out successfully."
   end
 
 end
