@@ -1,10 +1,2 @@
 <%= render partial: 'from', locals: { user: @user, books: @books, current_user: current_user } %>
 
-<% if @book.errors.any? %>
-  <%= @book.errors.count %>prohibited this obj from being saved:
-  <ul>
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
